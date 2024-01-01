@@ -25,13 +25,16 @@
 
 (define-module (tests test-builder)
   #:use-module (hello)
-  #:use-module (srfi srfi-64))
+  #:use-module (srfi srfi-64)
+  #:use-module (tests runner))
 
-(test-begin "test-builder")
+(test-runner-factory hello:test-runner)
+
+(test-begin "test-hello")
 
 (test-assert (string= "1234" "1234"))
 
-(test-end "test-builder")
+(test-end "test-hello")
 
 
-;;; (tests test-builder) ends here
+;;; (tests test-hello) ends here
